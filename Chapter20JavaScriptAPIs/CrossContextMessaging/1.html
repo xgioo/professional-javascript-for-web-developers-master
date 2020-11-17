@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <iframe id="myframe" src="http://127.0.0.1:5500/Chapter20JavaScriptAPIs/CrossContextMessaging/iframe.html" frameborder="0"></iframe>
+    <script>
+        let iframeWindow = document.getElementById("myframe").contentWindow;
+        iframeWindow.postMessage("A secret", "http://127.0.0.1:5500");
+
+        //  iframeWindow.postMessage("A secret", "http://127.0.0.1:5500"); 在控制台重复这个触发
+    </script>
+</body>
+
+</html>

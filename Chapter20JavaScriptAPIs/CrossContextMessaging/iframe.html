@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ifrme
+    ifrme
+    ifrme
+    ifrme
+    ifrme
+    ifrme
+    ifrme
+    ifrme
+    <script>
+        window.addEventListener("message", (event) => {
+            console.log(event)
+  // ensure the sender is expected
+  if (event.origin == "http://127.0.0.1:5500") {
+    // do something with the data
+    alert(event.data)
+    processMessage(event.data);
+    // optional: send a message back to the original window
+    event.source.postMessage("Received!", "http:// p2p.wrox.com");
+  }
+});
+
+    </script>
+</body>
+</html>
